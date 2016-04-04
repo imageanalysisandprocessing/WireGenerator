@@ -437,7 +437,8 @@ public class Wire_Generator_ implements PlugIn{
 							int start =ini.get("Parameters","n_start",double.class).intValue();
 							int step = ini.get("Parameters","n_step",double.class).intValue();
 							int number = start + (i-1)*step;
-							fs.saveAsTiff(ini.get("Parameters","destinationpath",String.class)+CreateFileName(number, ini)+"_skeletonized.tif");
+							//fs.saveAsTiff(ini.get("Parameters","destinationpath",String.class)+CreateFileName(number, ini)+"_skeletonized.tif");
+							fs.saveAsZip(ini.get("Parameters","destinationpath",String.class)+CreateFileName(number, ini)+"_skeletonized.tif");
 						}
 
 						// Save Image in results array
@@ -549,7 +550,8 @@ public class Wire_Generator_ implements PlugIn{
 						if (ini.get("Parameters","save_fcr_images",boolean.class))
 						{
 							FileSaver fs = new FileSaver(allRegionsImp);
-							fs.saveAsTiff(filename_picture);
+							//fs.saveAsTiff(filename_picture);
+							fs.saveAsZip(filename_picture);
 						}
 
 						// Save Image in results array
@@ -639,7 +641,8 @@ public class Wire_Generator_ implements PlugIn{
 									
 						// Save Image as tif
 						FileSaver fs = new FileSaver(imp);
-						fs.saveAsTiff(filename_picture);
+						//fs.saveAsTiff(filename_picture);
+						fs.saveAsZip(filename_picture);
 						System.out.println(filename+" -----> done.");
 
 						// Save Image in results array
